@@ -52,11 +52,12 @@ private:
     Widgets::Panel inputPanel;
     Widgets::Textbox taskInput;
     Widgets::Button addButton;
+
     
     // Task list panel
     Widgets::Panel taskListPanel;
     
     // Organizers
-    UI::Organizers::List inputOrganizer;
-    UI::Organizers::List taskListOrganizer;
+    UI::Organizers::Flow inputOrganizer;
+    UI::Organizers::Flow taskListOrganizer;
 };
