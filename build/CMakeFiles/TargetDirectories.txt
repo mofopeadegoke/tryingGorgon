@@ -1,0 +1,8 @@
+/home/daniel/Documents/tryingGorgon/build/CMakeFiles/RenegadeApplication.dir
+/home/daniel/Documents/tryingGorgon/build/CMakeFiles/copy-runtime-files.dir
+/home/daniel/Documents/tryingGorgon/build/CMakeFiles/edit_cache.dir
+/home/daniel/Documents/tryingGorgon/build/CMakeFiles/rebuild_cache.dir
+/home/daniel/Documents/tryingGorgon/build/CMakeFiles/list_install_components.dir
+/home/daniel/Documents/tryingGorgon/build/CMakeFiles/install.dir
+/home/daniel/Documents/tryingGorgon/build/CMakeFiles/install/local.dir
+/home/daniel/Documents/tryingGorgon/build/CMakeFiles/install/strip.dir
