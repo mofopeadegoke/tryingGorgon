@@ -18,16 +18,17 @@ Application::Application(UI::Window& window) :
     inputPanel.SetWidth(100_perc);
     inputPanel.AttachOrganizer(inputOrganizer);
     
+    
     // Add textbox and button to input panel
-    inputOrganizer.Add(taskInput);
-    inputOrganizer.Add(addButton);
+   inputOrganizer <<  taskInput << addButton ;
     taskInput.SetWidth(30_u);
     taskInput.Focus();
     
     // Add task list panel below
-    window.AddNextTo(taskListPanel);
+    window.Add(taskListPanel);
     taskListPanel.SetWidth(100_perc);
     taskListPanel.AttachOrganizer(taskListOrganizer);
+    taskListPanel.Move(0_u, 4_u);
     
     // Connect the button click event
     addButton.ClickEvent.Register([this]() {
@@ -53,8 +54,9 @@ void Application::AddTask() {
         return;
     }
     
-    // For now, just show a message - we'll improve this next
-    UI::ShowMessage("Task Added", "Task: " + text);
+    taskListPanel.Add(Widgets::Label(text));
+    taskInput.Set(" ");
+    
     
     // Clear the input - setter not available for this Inputbox type, so no action performed.
 }

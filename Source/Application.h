@@ -59,5 +59,5 @@ private:
     
     // Organizers
     UI::Organizers::Flow inputOrganizer;
-    UI::Organizers::Flow taskListOrganizer;
+    UI::Organizers::List taskListOrganizer;
 };
