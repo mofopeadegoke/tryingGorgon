@@ -53,8 +53,10 @@ void Application::AddTask() {
         UI::ShowMessage("Error", "Please enter a task");
         return;
     }
-    
-    taskListPanel.Add(Widgets::Label(text));
+
+    auto taskItem = new TaskItem(text);
+
+    taskListPanel.Add(*taskItem);
     taskInput.Set(" ");
     
     

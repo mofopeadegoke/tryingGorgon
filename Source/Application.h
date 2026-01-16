@@ -16,6 +16,7 @@
 #include <Gorgon/Widgets/Window.h>
 #include <Gorgon/UI/Organizers/List.h>
 #include <Gorgon/Widgets/Textbox.h>
+#include "TaskItem.h" 
 #include <vector>
 
 

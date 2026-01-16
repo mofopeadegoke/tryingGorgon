@@ -70,6 +70,13 @@ build CMakeFiles/RenegadeApplication.dir/Source/ViewSettings.cpp.o: CXX_COMPILER
   OBJECT_DIR = CMakeFiles/RenegadeApplication.dir
   OBJECT_FILE_DIR = CMakeFiles/RenegadeApplication.dir/Source
 
+build CMakeFiles/RenegadeApplication.dir/Source/TaskItem.cpp.o: CXX_COMPILER__RenegadeApplication_unscanned_Debug /home/daniel/Documents/tryingGorgon/Source/TaskItem.cpp || cmake_object_order_depends_target_RenegadeApplication
+  DEP_FILE = CMakeFiles/RenegadeApplication.dir/Source/TaskItem.cpp.o.d
+  FLAGS = -DLINUX -Werror=return-type -DGLM_SWIZZLE -DGLM_FORCE_RADIANS -DOPENGL  -DAUDIO -DAUDIO_PULSE -DFREETYPE_SUPPORT -DFLAC_SUPPORT -DVORBIS_SUPPORT -DFONTCONFIG_SUPPORT -DSCRIPTING -std=c++14 -g -std=c++14
+  INCLUDES = -isystem /home/daniel/Documents/Gorgon/Source
+  OBJECT_DIR = CMakeFiles/RenegadeApplication.dir
+  OBJECT_FILE_DIR = CMakeFiles/RenegadeApplication.dir/Source
+
 
 # =============================================================================
 # Link build statements for EXECUTABLE target RenegadeApplication
@@ -78,7 +85,7 @@ build CMakeFiles/RenegadeApplication.dir/Source/ViewSettings.cpp.o: CXX_COMPILER
 #############################################
 # Link the executable /home/daniel/Documents/tryingGorgon/Bin/RenegadeApplication
 
-build /home/daniel/Documents/tryingGorgon/Bin/RenegadeApplication: CXX_EXECUTABLE_LINKER__RenegadeApplication_Debug CMakeFiles/RenegadeApplication.dir/Source/Main.cpp.o CMakeFiles/RenegadeApplication.dir/Source/Application.cpp.o CMakeFiles/RenegadeApplication.dir/Source/ViewSettings.cpp.o | /usr/local/lib/libGorgon_d.a /usr/lib64/libGL.so /usr/lib64/libGLU.so /usr/lib64/libfontconfig.so /usr/lib64/libX11.so /usr/lib64/libXext.so /usr/lib64/libXrandr.so /usr/lib64/libXinerama.so /usr/lib64/libpulse.so /usr/lib64/libpng.so /usr/lib64/libz.so /usr/lib64/libfreetype.so /usr/lib64/libFLAC.so /usr/lib64/libvorbisenc.so /usr/lib64/libvorbisfile.so /usr/lib64/libvorbis.so /usr/lib64/libogg.so || copy-runtime-files
+build /home/daniel/Documents/tryingGorgon/Bin/RenegadeApplication: CXX_EXECUTABLE_LINKER__RenegadeApplication_Debug CMakeFiles/RenegadeApplication.dir/Source/Main.cpp.o CMakeFiles/RenegadeApplication.dir/Source/Application.cpp.o CMakeFiles/RenegadeApplication.dir/Source/ViewSettings.cpp.o CMakeFiles/RenegadeApplication.dir/Source/TaskItem.cpp.o | /usr/local/lib/libGorgon_d.a /usr/lib64/libGL.so /usr/lib64/libGLU.so /usr/lib64/libfontconfig.so /usr/lib64/libX11.so /usr/lib64/libXext.so /usr/lib64/libXrandr.so /usr/lib64/libXinerama.so /usr/lib64/libpulse.so /usr/lib64/libpng.so /usr/lib64/libz.so /usr/lib64/libfreetype.so /usr/lib64/libFLAC.so /usr/lib64/libvorbisenc.so /usr/lib64/libvorbisfile.so /usr/lib64/libvorbis.so /usr/lib64/libogg.so || copy-runtime-files
   DEP_FILE = CMakeFiles/RenegadeApplication.dir/link.d
   FLAGS = -DLINUX -Werror=return-type -DGLM_SWIZZLE -DGLM_FORCE_RADIANS -DOPENGL  -DAUDIO -DAUDIO_PULSE -DFREETYPE_SUPPORT -DFLAC_SUPPORT -DVORBIS_SUPPORT -DFONTCONFIG_SUPPORT -DSCRIPTING -std=c++14 -g
   LINK_FLAGS = -Wl,--dependency-file=CMakeFiles/RenegadeApplication.dir/link.d

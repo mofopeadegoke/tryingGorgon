@@ -17,6 +17,7 @@ add_executable(${PROJECT_NAME}
     Source/json.hpp
     Source/Application.cpp
     Source/ViewSettings.cpp
+    Source/TaskItem.cpp
 )
 
 linkgorgon(${PROJECT_NAME})

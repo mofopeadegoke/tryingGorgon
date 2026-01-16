@@ -8,10 +8,6 @@ TaskItem::TaskItem(const std::string& taskText)
 {
     AttachOrganizer(organizer);
     
-    Add(checkbox);
-    Add(taskLabel);
-    Add(deleteButton);
-    
     organizer << checkbox << 1 << taskLabel << 1 << deleteButton;
     
     taskLabel.SetWidth(100_perc);
