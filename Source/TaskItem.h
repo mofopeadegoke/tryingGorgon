@@ -18,6 +18,14 @@ public:
     
     bool IsCompleted() const;
     std::string GetTaskText() const;
+
+    auto getCheckbox() {
+        return &checkbox;
+    }
+
+    auto getDeleteButton() {
+        return &deleteButton;
+    }   
     
 private:
     Widgets::Checkbox checkbox;

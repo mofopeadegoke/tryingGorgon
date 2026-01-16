@@ -36,6 +36,8 @@ Application::Application(UI::Window& window) :
     addButton.ClickEvent.Register([this]() {
         AddTask();
     });
+
+    
     inputPanel.SetDefault(addButton);
     Run();
 }
@@ -57,6 +59,9 @@ void Application::AddTask() {
     }
 
     auto taskItem = new TaskItem(text);
+    taskItem->getDeleteButton()->ClickEvent.Register([this, taskItem]() {
+        DeleteTask(*taskItem);
+    });
     taskItems.push_back(taskItem);
 
     taskListPanel.Add(*taskItem);
@@ -69,5 +74,14 @@ void Application::SaveTasks() {
         task.text = item->GetTaskText();
         task.completed = item->IsCompleted();
         tasks.push_back(task);
+    }
+}
+
+void Application::DeleteTask(TaskItem& item) {
+    taskListPanel.Remove(item);
+    
+    auto it = std::find(taskItems.begin(), taskItems.end(), &item);
+    if (it != taskItems.end()) {
+        taskItems.erase(it);
     }
 }

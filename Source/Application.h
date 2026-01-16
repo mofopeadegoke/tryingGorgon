@@ -56,6 +56,7 @@ private:
     void LoadTasks();
     void SaveTasks();
     void DeleteTask(TaskItem& item);
+    
     UI::Window &window;
     
     // Top panel for input

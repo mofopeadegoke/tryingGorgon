@@ -18,9 +18,7 @@ TaskItem::TaskItem(const std::string& taskText)
         
     });
     
-    deleteButton.ClickEvent.Register([this]() {
-        
-    });
+    
 }
 
 bool TaskItem::IsCompleted() const {

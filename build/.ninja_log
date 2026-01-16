@@ -29,3 +29,14 @@
 2	10	1768561916178186078	/home/daniel/Documents/tryingGorgon/build/CMakeFiles/copy-runtime-files	1dc4b81f993b30bd
 10	1089	1768561916186891247	CMakeFiles/RenegadeApplication.dir/Source/TaskItem.cpp.o	58070547dc4836bb
 1089	1939	1768561917266187021	/home/daniel/Documents/tryingGorgon/Bin/RenegadeApplication	359700ee09395b11
+3	17	1768566760346021486	CMakeFiles/copy-runtime-files	1dc4b81f993b30bd
+3	17	1768566760346021486	/home/daniel/Documents/tryingGorgon/build/CMakeFiles/copy-runtime-files	1dc4b81f993b30bd
+17	2563	1768566760360294548	CMakeFiles/RenegadeApplication.dir/Source/Main.cpp.o	2088a5e091e29fcb
+18	2754	1768566760361021523	CMakeFiles/RenegadeApplication.dir/Source/Application.cpp.o	b230640a60f036f7
+2754	4253	1768566763097028319	/home/daniel/Documents/tryingGorgon/Bin/RenegadeApplication	359700ee09395b11
+3	17	1768567133562221873	CMakeFiles/copy-runtime-files	1dc4b81f993b30bd
+3	17	1768567133562221873	/home/daniel/Documents/tryingGorgon/build/CMakeFiles/copy-runtime-files	1dc4b81f993b30bd
+18	1773	1768567133577777137	CMakeFiles/RenegadeApplication.dir/Source/TaskItem.cpp.o	58070547dc4836bb
+17	2431	1768567133576804634	CMakeFiles/RenegadeApplication.dir/Source/Main.cpp.o	2088a5e091e29fcb
+17	2735	1768567133577447423	CMakeFiles/RenegadeApplication.dir/Source/Application.cpp.o	b230640a60f036f7
+2735	4068	1768567136294221968	/home/daniel/Documents/tryingGorgon/Bin/RenegadeApplication	359700ee09395b11
