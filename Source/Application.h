@@ -25,6 +25,11 @@ namespace Widgets = Gorgon::Widgets;
 
 using namespace Gorgon::UI::literals;
 
+struct Task {
+    std::string text;
+    bool completed;
+};
+
 /**
  * This is your application class. You should modify it as per your needs.
  */
@@ -48,6 +53,9 @@ public:
 private:
 
     void AddTask();
+    void LoadTasks();
+    void SaveTasks();
+    void DeleteTask(TaskItem& item);
     UI::Window &window;
     
     // Top panel for input
@@ -63,4 +71,7 @@ private:
     // Organizers
     UI::Organizers::Flow inputOrganizer;
     UI::Organizers::List taskListOrganizer;
+
+    std::vector<Task> tasks;
+    std::vector<TaskItem*> taskItems;
 };

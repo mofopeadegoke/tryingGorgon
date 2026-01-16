@@ -7,10 +7,12 @@ TaskItem::TaskItem(const std::string& taskText)
     , deleteButton("Delete")
 {
     AttachOrganizer(organizer);
+    deleteButton.SetText("Delete");
     
-    organizer << checkbox << 1 << taskLabel << 1 << deleteButton;
+    organizer << checkbox << taskLabel << deleteButton;
     
-    taskLabel.SetWidth(100_perc);
+    taskLabel.SetWidth(2_u);
+    checkbox.SetWidth(1_u);
 
     checkbox.ChangedEvent.Register([this]() {
         

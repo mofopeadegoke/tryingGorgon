@@ -1,5 +1,5 @@
 #include "Application.h"
-
+#include "json.hpp"
 #include <Gorgon/Graphics/Color.h>
 #include <Gorgon/UI/Dialog.h>
 #include <Gorgon/UI/Dimension.h>
@@ -7,6 +7,8 @@
 #include <Gorgon/UI/Window.h>
 #include <Gorgon/Window.h>
 #include <Gorgon/Input/Mouse.h>
+
+using json = nlohmann::json;
 
 Application::Application(UI::Window& window) :
     window(window),
@@ -55,10 +57,17 @@ void Application::AddTask() {
     }
 
     auto taskItem = new TaskItem(text);
+    taskItems.push_back(taskItem);
 
     taskListPanel.Add(*taskItem);
-    taskInput.Set(" ");
-    
-    
-    // Clear the input - setter not available for this Inputbox type, so no action performed.
+    taskInput.Set(" "); // clearing the input box
+}
+
+void Application::SaveTasks() {
+    for (const auto& item : taskItems) {
+        Task task;
+        task.text = item->GetTaskText();
+        task.completed = item->IsCompleted();
+        tasks.push_back(task);
+    }
 }
