@@ -97,7 +97,6 @@ void Application::DeleteTask(TaskItem& item) {
     
     auto it = std::find(taskItems.begin(), taskItems.end(), &item);
     if (it != taskItems.end()) {
-        delete *it;
         taskItems.erase(it);
     }
     SaveTasks();
