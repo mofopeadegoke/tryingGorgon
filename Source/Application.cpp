@@ -31,6 +31,10 @@ Application::Application(UI::Window& window) :
     taskListPanel.SetWidth(100_perc);
     taskListPanel.AttachOrganizer(taskListOrganizer);
     taskListPanel.Move(0_u, 4_u);
+
+    window.Add(titleLabel);
+    titleLabel.Move(18_u, 4_u);
+    
     
     // Connect the button click event
     addButton.ClickEvent.Register([this]() {
@@ -90,6 +94,8 @@ void Application::SaveTasks() {
     }
     file << tasksInJson.dump(4);    
     file.close();
+    int numberOfTasks = taskItems.size();
+    titleLabel.SetText("0 out of " + std::to_string(numberOfTasks) + " tasks completed");
 }
 
 void Application::DeleteTask(TaskItem& item) {
@@ -142,6 +148,8 @@ void Application::LoadTasks() {
         }
         
         std::cout << "Loaded " << taskItems.size() << " tasks\n";
+        int numberOfTasks = taskItems.size();
+        titleLabel.SetText("0 out of " + std::to_string(numberOfTasks) + " tasks completed");
         
     } catch (const std::exception& e) {
         std::cerr << "Error loading tasks: " << e.what() << "\n";
