@@ -28,3 +28,7 @@ bool TaskItem::IsCompleted() const {
 std::string TaskItem::GetTaskText() const {
     return taskLabel.GetText();
 }
+
+void TaskItem::SetCompleted(bool completed) {
+    checkbox.SetState(completed);
+}

@@ -39,6 +39,7 @@ Application::Application(UI::Window& window) :
 
     
     inputPanel.SetDefault(addButton);
+    LoadTasks();
     Run();
 }
 
@@ -62,19 +63,33 @@ void Application::AddTask() {
     taskItem->getDeleteButton()->ClickEvent.Register([this, taskItem]() {
         DeleteTask(*taskItem);
     });
+    taskItem->getCheckbox()->ChangedEvent.Register([this](bool) {
+        SaveTasks();
+    });
     taskItems.push_back(taskItem);
 
     taskListPanel.Add(*taskItem);
     taskInput.Set(" "); // clearing the input box
+    SaveTasks();
 }
 
 void Application::SaveTasks() {
+    tasks.clear();
+
     for (const auto& item : taskItems) {
         Task task;
         task.text = item->GetTaskText();
         task.completed = item->IsCompleted();
         tasks.push_back(task);
     }
+
+    json tasksInJson = json::array();
+    std::ofstream file("tasks.json");
+    for (const auto& task : tasks) {
+        tasksInJson.push_back({ {"text", task.text}, {"completed", task.completed} });
+    }
+    file << tasksInJson.dump(4);    
+    file.close();
 }
 
 void Application::DeleteTask(TaskItem& item) {
@@ -82,6 +97,54 @@ void Application::DeleteTask(TaskItem& item) {
     
     auto it = std::find(taskItems.begin(), taskItems.end(), &item);
     if (it != taskItems.end()) {
+        delete *it;
         taskItems.erase(it);
+    }
+    SaveTasks();
+
+}
+
+void Application::LoadTasks() {
+    std::ifstream file("tasks.json");
+    
+    if (!file.is_open()) {
+        std::cout << "No tasks.json found (OK for first run)\n";
+        return;
+    }
+    
+    try {
+        json tasksInJson;
+        file >> tasksInJson;
+        file.close();
+        
+        for (const auto& taskJson : tasksInJson) {
+            std::string text = taskJson.value("text", "");
+            bool completed = taskJson.value("completed", false);
+            
+            if (!text.empty()) {
+                // Create task widget
+                auto taskItem = new TaskItem(text);
+                taskItem->SetCompleted(completed);
+                
+                // Register events
+                taskItem->getDeleteButton()->ClickEvent.Register([this, taskItem]() {
+                    DeleteTask(*taskItem);
+                });                
+
+                taskItem->getCheckbox()->ChangedEvent.Register([this](bool) {
+                    SaveTasks();
+                });
+                
+                // Add to list and UI
+                taskItems.push_back(taskItem);
+                taskListPanel.Add(*taskItem);
+                taskListOrganizer.Add(*taskItem);
+            }
+        }
+        
+        std::cout << "Loaded " << taskItems.size() << " tasks\n";
+        
+    } catch (const std::exception& e) {
+        std::cerr << "Error loading tasks: " << e.what() << "\n";
     }
 }

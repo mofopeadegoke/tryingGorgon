@@ -17,6 +17,7 @@ public:
     TaskItem(const std::string& taskText);
     
     bool IsCompleted() const;
+    void SetCompleted(bool completed);
     std::string GetTaskText() const;
 
     auto getCheckbox() {
