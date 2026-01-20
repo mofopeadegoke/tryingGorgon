@@ -1,10 +1,10 @@
 [
     {
-        "completed": false,
+        "completed": true,
         "text": "lala"
     },
     {
-        "completed": false,
+        "completed": true,
         "text": "jik"
     },
     {

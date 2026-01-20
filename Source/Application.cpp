@@ -41,6 +41,8 @@ Application::Application(UI::Window& window) :
         AddTask();
     });
 
+
+
     
     inputPanel.SetDefault(addButton);
     LoadTasks();
@@ -95,7 +97,16 @@ void Application::SaveTasks() {
     file << tasksInJson.dump(4);    
     file.close();
     int numberOfTasks = taskItems.size();
-    titleLabel.SetText("0 out of " + std::to_string(numberOfTasks) + " tasks completed");
+    int completedTasks = std::count_if(taskItems.begin(), taskItems.end(), [](const TaskItem* item) {
+        return item->IsCompleted();
+    });
+    titleLabel.SetText(std::to_string(completedTasks) + " out of " + std::to_string(numberOfTasks) + " tasks completed");
+    if (numberOfTasks == 0) {
+        titleLabel.SetText("0 out of 0 tasks completed");
+    }
+    if (completedTasks == 0) {
+        titleLabel.SetText("0 out of " + std::to_string(numberOfTasks) + " tasks completed");
+    }
 }
 
 void Application::DeleteTask(TaskItem& item) {
